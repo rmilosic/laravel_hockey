@@ -5,8 +5,13 @@
 @section('content')
 
 <div class="row">
+	<h1> {{ $team->team_name }} </h1>
+	<ul>
+		
 
-	<h1> This is INDEX page </h1>
+	</ul>
 
 </div>
+
+
 @stop 

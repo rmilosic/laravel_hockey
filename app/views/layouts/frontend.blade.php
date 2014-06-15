@@ -19,22 +19,23 @@
 </head>
 	<body>
 		
-			<div class="container">
-			
-				<header class="row">
+		<div class="container">
+
+			<header class="header">
 					@include('includes.header')
-				</header>
+			</header>
+		
+			<div id="main" role="main">
+
+				@yield('content')
 			
-			@yield('content')
-		
-		
-				<footer class="row">
-					@include('includes.footer')
-				</footer>
-
 			</div>
+		
+			<footer class="footer">
+				@include('includes.footer')
+			</footer>
 
-
+		</div>
 
 	</body>
 </html>

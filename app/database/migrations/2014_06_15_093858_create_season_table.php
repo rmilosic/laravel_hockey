@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTeamsTable extends Migration {
+class CreateSeasonTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,11 @@ class CreateTeamsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('teams', function(Blueprint $table)
+		Schema::create('season', function($table)
 		{
-			$table->increments('id');
-			$table->timestamps();
+			$table->increments('season_id');
+			$table->string('year', 20);
+			$table->string('type');
 		});
 	}
 
@@ -26,7 +27,10 @@ class CreateTeamsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('teams');
+		Schema::drop('season', function($table)
+		{
+			
+		});
 	}
 
 }

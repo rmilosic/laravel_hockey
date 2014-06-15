@@ -12,6 +12,7 @@
 */
 
 Route::get('/', array(
+	'as' => 'home',
 	'uses'=> 'HomeController@home'));
 
 
@@ -21,10 +22,6 @@ Route::get('/teams', array(
 	'uses'=> 'TeamsController@index'));
 
 
-
-
-Route::get('/kitty', array(
- 	'as' => 'kitty', function(){
-	return View::make('kittyView');
-	}
-));
+Route::get('team/{team_id}', array(
+	'as' => 'team',
+	'uses' => 'TeamsController@view'));
