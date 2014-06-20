@@ -1,9 +1,6 @@
-<div class="row">
-	<div class="container">
-		<div class="navbar navbar-fixed-bottom">
-				
-			<h1>Title</h1>
 
-		</div>
-	</div>
-</div>
+  <div class="container">
+    <p class="text-muted">This Bootstrap Example courtesy <a href="http://www.bootply.com">Bootply.com</a></p>
+  </div>
+
+

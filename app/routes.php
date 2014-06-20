@@ -22,6 +22,7 @@ Route::get('/teams', array(
 	'uses'=> 'TeamsController@index'));
 
 
-Route::get('team/{team_id}', array(
+Route::get('teams/{team_id}', array(
 	'as' => 'team',
 	'uses' => 'TeamsController@view'));
+

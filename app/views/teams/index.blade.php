@@ -4,17 +4,19 @@
 
 @section('content')
 
-<div class="row">
+
+
+	<h1> {{ $title }} </h1>
 	
 	<ul>
 		@foreach($teams as $team)
-		<li>{{ $team->team_name }}</li>
+		<li> {{ link_to_route('team', $team->team_name, array($team->team_id)) }}  </li>
 
 		@endforeach 
 
 	</ul>
 
-</div>
+
 
 
 @stop 
