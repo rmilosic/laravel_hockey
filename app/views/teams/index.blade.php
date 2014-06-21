@@ -16,7 +16,8 @@
 
 	</ul>
 
+	
+	<p> {{ link_to_route('new_team', 'Add new team') }} </p>
 
-
-
+	
 @stop 

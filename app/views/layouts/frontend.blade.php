@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title> {{ $title }}</title>
+	<title> {{ $title }} </title>
 
 		
 
@@ -30,6 +30,12 @@
 	
 </head>
 	<body>
+
+	@if(Session::has('message'))
+		<p style="color: red;"> {{ Session::get('message')}} 
+		</p>
+
+	@endif
 
 	<!--style="background-image:url( {{ asset('assets/bootstrap/img/bckgrd.jpg') }} ); background-size: auto 100% ;
     background-repeat: no-repeat;" -->
