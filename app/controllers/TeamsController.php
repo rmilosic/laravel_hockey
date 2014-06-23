@@ -9,34 +9,37 @@ class TeamsController extends BaseController {
 		
 		return View::make('teams.index')
 		->with('title', 'Teams page')
-		->with('teams', Team::orderBy('team_name')->get());
+		->with('teams', Team::orderBy('name')->get());
 	}
 
 	
 	
-	public function view($team_id) {
+	public function view($id) {
 		
 		return View::make('teams.view')
 		->with('title', 'Team View page')
-		->with('teams', Team::orderBy('team_name')->get())
-		->with('team', Team::find($team_id))
-		->with('players', Player::where('team_id', '=', $team_id)->get()); 
+		->with('teams', Team::orderBy('name')->get())
+		->with('team', Team::find($id))
+		->with('players', Player::where('id', '=', $id)->get()); 
     }
 
 	 public function newTeam() {
 			
+		
+
 			return View::make('teams.new')
-			->with('title', 'New team');
+			->with('title', 'New team')
+			->with('leagueList', League::lists('name', 'id'));
 			
 	}
 
 	public function createTeam() {
 		Team::create(array(
-			'team_name'=>Input::get('team_name'),
+			'name'=>Input::get('name'),
 			'abbr'=>Input::get('abbr')
 			));
-		return Redirect::to_route('teams')
-			->with('message', 'Tole je blo pa uspešno, ne');
+		return Redirect::route('teams')
+			->with('message', 'Your post was successful!');
 	}
 
 

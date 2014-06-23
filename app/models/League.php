@@ -1,11 +1,13 @@
 <?php
 
-class League extends Eloquent {
-	//public static $table = 'teams';
+class League extends Base {
 
-	protected $primaryKey = 'league_id';
-	protected $fillable = array('name');
-	protected $guarded = array();
+
+	protected $guarded = array('');
+
+	
+	
+
 
     //protected $fillable = ['name'];
 
@@ -13,6 +15,6 @@ class League extends Eloquent {
     {
         return $this->hasMany('Season');
 
-
     }
 }
+

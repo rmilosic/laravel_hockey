@@ -31,11 +31,7 @@
 </head>
 	<body>
 
-	@if(Session::has('message'))
-		<p style="color: red;"> {{ Session::get('message')}} 
-		</p>
-
-	@endif
+	
 
 	<!--style="background-image:url( {{ asset('assets/bootstrap/img/bckgrd.jpg') }} ); background-size: auto 100% ;
     background-repeat: no-repeat;" -->
@@ -57,10 +53,35 @@
 
 
 				<div class="container"  style="background: rgba(255,255,255, 0.86);; height: 1020px;"> 					<!-- CONTAINER -->
-					<div id="main" role="main">
-						<!--<div class="container">-->
-						@yield('content')
-						<!--  </div> -->
+					<div class="row">
+						<div class="col-md-8">
+
+							<div id="main" role="main">
+								@if(Session::has('message'))
+								<p style="color: green;"> {{ Session::get('message')}} 
+								</p>
+								@endif
+								<!--<div class="container">-->
+
+
+								@yield('content')
+								<!--  </div> -->
+							</div>
+							
+
+						</div>
+						
+						<div class="col-md-4">
+
+							<div id="sidebar">
+								
+								@yield('sidebar')
+				
+							</div>
+							
+
+						</div>
+
 					</div>
 				</div>																									<!-- CONTAINER -->
 

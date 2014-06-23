@@ -8,7 +8,7 @@
 
 	<ul>
 	@foreach ($leagues as $league)
-		<li> {{ link_to_route('league',   $league->name, array($league->league_id)) }}  </li>
+		<li> {{ link_to_route('league',   $league->name, array($league->id)) }}  </li>
 	@endforeach
 	</ul>
 

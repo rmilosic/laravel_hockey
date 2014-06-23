@@ -1,9 +1,9 @@
 <?php
 
-class Season extends Eloquent {
+class Season extends Base {
 	//public static $table = 'teams';
 
-	protected $primaryKey = 'season_id';
+	protected $guarded = array('');
 	
 	public function seasons()
     {

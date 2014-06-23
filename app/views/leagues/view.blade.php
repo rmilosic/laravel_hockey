@@ -3,16 +3,18 @@
 @section('content')
 
 
-	<h1> This is {{ $leagueName->name }}  </h1>
+	<h1> This is {{ $league->name }}  </h1>
 	
-	<h2> Ekipe </h2>
+	<h2> Sezone </h2>
 
+	@foreach ($seasons as $season)
 	<ul>
-	@foreach ($teams as $team)
-		<li> {{ link_to_route('team',  $team->team_name, array($team->team_id)) }}  </li>
+		<li> {{ link_to_route('season', $season->year, array($season->id, $league->id))  }} </li>
 	@endforeach
 	</ul>
 
+	
+	{{ link_to_route('new_season', 'Add new season', array($league->id))  }}
 
 
 @stop 

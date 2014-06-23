@@ -13,7 +13,7 @@
 	
 	<p>
 			{{ Form::label('name', 'Ime lige:') }}
-			{{ Form::text('name') }}</br>
+			{{ Form::text('name', '', array( 'autofocus' => 'autofocus')) }} </br>
 	</p>
 
 		{{ Form::submit('Add league') }}

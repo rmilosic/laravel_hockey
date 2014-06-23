@@ -15,9 +15,9 @@ public $restful = true;
 		
 		return View::make('leagues.view')
 		->with('title', 'Leagues view')
-		->with('leagueName', League::where('league_id', '=', $league_id)->first())
-		->with('leagues', League::orderBy('name')->get())
-		->with('teams', Team::where('league_id', '=', $league_id)->get()); 
+		->with('league', League::where('id', '=', $league_id)->first())
+		//->with('leagues', League::orderBy('name')->get())
+		->with('seasons', Season::where('league_id', '=', $league_id)->get());
 	}
 
 	public function newLeague() {
@@ -27,11 +27,11 @@ public $restful = true;
 	}
 
 	public function createLeague() {
-		Team::create(array(
+		League::create(array(
 			'name'=>Input::get('name'),
 			));
 
-		return Redirect::to_route('leagues')
+		return Redirect::route('leagues')
 			->with('message', 'Your post was successful!');
 	}
 

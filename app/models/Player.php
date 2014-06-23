@@ -1,6 +1,6 @@
 <?php
 
-class Player extends Eloquent {
+class Player extends Base {
 	//public static $table = 'teams';
 
 	protected $primaryKey = 'player_id';

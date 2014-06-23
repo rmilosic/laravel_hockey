@@ -1,9 +1,12 @@
 <?php
 
-class Team extends Eloquent {
+class Team extends Base {
 	//public static $table = 'teams';
 
-	protected $primaryKey = 'team_id';
+
+	protected $guarded = array('');
+
+	public $timestamps = false;
 	
 	public function players()
     {

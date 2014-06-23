@@ -6,7 +6,7 @@
 
 
 
-	<h1> Add new author </h1>
+	<h1> Add a new team </h1>
 	
 	
 	 {{ Form::open(array('url' => 'teams/create', 'method' => 'POST')) }}
@@ -19,6 +19,17 @@
 	<p>
 			{{ Form::label('abbr', 'Kratica:') }}
 			{{ Form::text('abbr') }} </br>
+	
+	</p>
+
+	<p>
+			{{ Form::label('league', 'Liga:') }}
+			{{ Form::select('league', $leagueList, 0 ) }} </br>
+
+			{{ Form::label('season', 'Sezona:') }}
+			{{ Form::select('season', $leagueList, 0 ) }}
+
+
 	
 	</p>
 

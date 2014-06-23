@@ -20,7 +20,8 @@ class HomeController extends BaseController {
 	public function home()
 	{
 		return View::make('home')
-		->with('title', 'Home');
+		->with('title', 'Home')
+		->with('teams', Team::orderBy('name')->get());
 	}	
 
 }

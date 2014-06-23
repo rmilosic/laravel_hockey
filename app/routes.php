@@ -21,7 +21,7 @@ Route::get('/teams', array(
 	'as' => 'teams',
 	'uses'=> 'TeamsController@index'));
 
-Route::pattern('team_id', '[0-9]+');
+Route::pattern('team_id', '[0-9]*');
 Route::get('teams/{team_id}', array(
 	'as' => 'team',
 	'uses' => 'TeamsController@view'));
@@ -42,7 +42,7 @@ Route::get('/leagues', array(
 	'uses'=> 'LeaguesController@index'));
 
 
-Route::pattern('league_id', '[0-9]+');
+Route::pattern('league_id', '[0-9]*');
 Route::get('/leagues/{league_id}', array(
 	'as' => 'league',
 	'uses'=> 'LeaguesController@view'));
@@ -53,3 +53,21 @@ Route::get('leagues/new', array(
 
 Route::post('leagues/create', array(
 	'uses' => 'LeaguesController@createLeague'));
+
+
+/* Seasons */
+
+Route::pattern('league_id', '[0-9]*');
+Route::pattern('season_id', '[0-9]*');
+
+Route::get('/leagues/{league_id}/{season_id}', array(
+	'as' => 'season',
+	'uses'=> 'SeasonsController@view'));
+
+Route::get('/leagues/{league_id}/new', array(
+	'as' => 'new_season',
+	'uses'=> 'SeasonsController@newSeason'));
+
+Route::post('season/create?{league_id}', array(
+	'as' => 'create_season',
+	'uses' => 'SeasonsController@createSeason'));
