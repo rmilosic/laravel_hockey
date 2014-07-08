@@ -132,3 +132,8 @@ Route::post('games/create', array(
 Route::get('game/{game_id}/fill', array(
 	'as' => 'fill_game',
 	'uses'=> 'GamesController@fillGame'));
+
+/* FILL GAME */
+
+Route::post('data/create', array(
+	'uses' => 'GamesController@createData'));

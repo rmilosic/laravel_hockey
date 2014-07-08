@@ -36,14 +36,20 @@ public function newGame($season_id, $league_id) {
 
 		$home_id = Game::find($game_id)->pluck('home_id');
 		$away_id = Game::find($game_id)->pluck('away_id');
+		$leagues_id = Game::find($game_id)->pluck('leagues_id');
 
 		return View::make('games.fill')
 		->with('title', 'Add new game')
 		->with('game', Game::find($game_id))
+		->with('league', League::find($leagues_id)->first())
 		->with('homePlayers', Player::where('team_id', '=', $home_id)->lists('jersey', 'id'))
 		->with('awayPlayers', Player::where('team_id', '=', $away_id)->lists('jersey', 'id'))
 		->with('homeTeam', Team::find($home_id))
 		->with('awayTeam', Team::find($away_id));
 	}
+
+	public function createData() {
+	}
+		
 
 }
