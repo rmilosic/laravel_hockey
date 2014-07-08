@@ -10,6 +10,11 @@ class Team extends Base {
 	
 	public function players()
     {
-        return $this->hasMany('Player');
+        return $this->hasMany('Player', 'team_id');
+    }
+
+    public function league()
+    {
+        return $this->belongsTo('League', 'leagues_id');
     }
 }

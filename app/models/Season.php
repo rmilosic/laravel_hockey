@@ -5,8 +5,17 @@ class Season extends Base {
 
 	protected $guarded = array('');
 	
-	public function seasons()
+	public function leagues()
     {
-        return $this->belongsTo('League');
+        return $this->hasMany('League', 'seasons_id');
+    }
+
+
+    public static $rules = array(
+    	'year' => 'required|min:7'
+    	);
+
+    public static function validate($data){
+    	return Validator::make($data, static::$rules);
     }
 }

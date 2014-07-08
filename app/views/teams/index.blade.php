@@ -10,7 +10,7 @@
 	
 	<ul>
 		@foreach($teams as $team)
-		<li> {{ link_to_route('team', $team->team_name, array($team->team_id)) }}  </li>
+		<li> {{ link_to_route('team', $team->name, array($team->id)) }}  </li>
 
 		@endforeach 
 

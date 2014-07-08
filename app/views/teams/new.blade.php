@@ -4,40 +4,42 @@
 
 @section('content')
 
-
+	<p>Dodaj ekipo v ligo {{ $league->name }} </p>
 
 	<h1> Add a new team </h1>
 	
 	
-	 {{ Form::open(array('url' => 'teams/create', 'method' => 'POST')) }}
+	 {{ Form::open(array('url' => '/teams/create/', 'method' => 'POST', 'files' => 'true')) }}
 	
 	<p>
-			{{ Form::label('team_name', 'Ime ekipe:') }}
-			{{ Form::text('team_name') }}</br>
+			{{ Form::label('name', 'Ime ekipe:') }}
+			{{ Form::text('name') }}
 	</p>
 
 	<p>
 			{{ Form::label('abbr', 'Kratica:') }}
-			{{ Form::text('abbr') }} </br>
+			{{ Form::text('abbr') }} 	
+	</p>
 	
+
+	<p>
+			{{ Form::label('email', 'Email:') }}
+			{{ Form::text('email') }} 	
 	</p>
 
 	<p>
-			{{ Form::label('league', 'Liga:') }}
-			{{ Form::select('league', $leagueList, 0 ) }} </br>
-
-			{{ Form::label('season', 'Sezona:') }}
-			{{ Form::select('season', $leagueList, 0 ) }}
-
+			{{ Form::label('phone', 'Telefon:') }}
+			{{ Form::text('phone') }} 	
+	</p>
+	
+			{{ Form::hidden('leagues_id', $league->id) }}
 
 	
-	</p>
 
 	<p>
 		{{ Form::submit('Add team') }}
 	</p>
-			{{-- Form::label('league_id', 'Kratica:') --}}
-			{{-- Form::field('abbr') --}} 
+		
 			
 	{{ Form::close() }}
 	

@@ -11,9 +11,15 @@ class League extends Base {
 
     //protected $fillable = ['name'];
 
-	public function leagues()
+	public function season()
     {
-        return $this->hasMany('Season');
+        return $this->belongsTo('Season');
+
+    }
+
+    public function teams()
+    {
+        return $this->hasMany('Team', 'leagues_id');
 
     }
 }

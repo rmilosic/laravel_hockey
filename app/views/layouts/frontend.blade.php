@@ -10,8 +10,10 @@
 		
 
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href= "{{ URL::asset('assets/bootstrap/dist/css/bootstrap.css') }}"  >
-		<link rel="stylesheet" href= "{{ URL::asset('assets/bootstrap/dist/css/bootstrap-custom.css') }}"  >
+		{{ HTML::style('/assets/bootstrap/dist/css/bootstrap.css') }}
+		
+
+	  	{{ HTML::style('/assets/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}
 
 		
 		 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,13 +26,22 @@
 		 
 		<!-- Latest compiled and minified JavaScript -->
 
-	
+		{{ HTML::script('assets/jquery/jquery.min.js') }}
+
+		{{ HTML::script('assets/bootstrap/dist/js/bootstrap.js') }}
+
+		{{ HTML::script('assets/bootstrap-datepicker/js/bootstrap-datepicker.js') }}
+		{{ HTML::script('assets/bootstrap-datepicker/js/locales/bootstrap-datepicker.sl.js')}}
+
+		{{ HTML::script('assets/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}
+
+		{{ HTML::script('assets/bootstrap/dist/js/custom.js') }}
 		
 
 	
 </head>
 	<body>
-
+		
 	
 
 	<!--style="background-image:url( {{ asset('assets/bootstrap/img/bckgrd.jpg') }} ); background-size: auto 100% ;
@@ -54,7 +65,7 @@
 
 				<div class="container"  style="background: rgba(255,255,255, 0.86);; height: 1020px;"> 					<!-- CONTAINER -->
 					<div class="row">
-						<div class="col-md-8">
+						<div class="col-md-12">
 
 							<div id="main" role="main">
 								@if(Session::has('message'))
@@ -71,16 +82,7 @@
 
 						</div>
 						
-						<div class="col-md-4">
-
-							<div id="sidebar">
-								
-								@yield('sidebar')
-				
-							</div>
-							
-
-						</div>
+						
 
 					</div>
 				</div>																									<!-- CONTAINER -->
@@ -94,9 +96,7 @@
 		</div> 														<!-- WRAP -->
 	
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-		<script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+		
 
 	</body>
 </html>
